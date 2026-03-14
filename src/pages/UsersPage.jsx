@@ -4,7 +4,7 @@ function UsersPage() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/users")
+    fetch(`${import.meta.env.VITE_API_URL}/users`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
